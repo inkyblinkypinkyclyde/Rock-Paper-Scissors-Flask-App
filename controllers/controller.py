@@ -3,10 +3,8 @@ from app import app
 from models.players import *
 from models.player import *
 
-@app.route("/rps")
-def index_pvp():
-    return render_template('index.html', title= 'PvP mode',)
 
+#pve routes
 @app.route("/rps/pve")
 def index_pve():
     return render_template('pve_rps.html', title= 'PvE mode',)
@@ -16,27 +14,29 @@ def pve_play():
     outcome = play_game_pve(request.form['option'])
     return render_template('pve_rps.html', title= 'PvE mode', outcome = outcome)
 
-@app.route('/rps/rock/scissors')
-def outcome1():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 1 beat player 2")
+# #pvp routes  I'll fix these later
+# @app.route("/rps/pvp")
+# def pvp_play():
+#     return render_template('pvp_rps.html', title= 'PvP mode',)
 
-@app.route('/rps/scissors/paper')
-def outcome2():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 1 beat player 2")
+# @app.route("/rps/pvp", methods=['post'])
+# def pvp_play():
+#     outcome = play_game_pve(request.form['option'])
+#     return render_template('pve_rps.html', title= 'PvE mode', outcome = outcome)
 
-@app.route('/rps/paper/rock')
-def outcome3():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 1 beat player 2")
+@app.route("/rps")
+def index_pvp():
+    return render_template('pvp_rps.html', title= 'PvP mode',)
 
-@app.route('/rps/scissors/rock')
-def outcome4():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 2 beat player 1")
 
-@app.route('/rps/paper/scissors/')
-def outcome5():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 2 beat player 1")
+@app.route('/rps/<player1_choice>/<player2_choice>')
+def take_choices(player1_choice, player2_choice):
+    player1 = Player("John", player1_choice)
+    player2 = Player("Jarrod", player2_choice)
+    return render_template('pvp_URL_rps.html', title= 'PvP URL entry mode', result = play_game_URL_input(player1, player2))
 
-@app.route('/rps/rock/scissors')
-def outcome6():
-    return render_template('index.html', title= 'PvP mode', outcome_string = "player 2 beat player 1")
+#player navigates to rps/rock/paper
+#create player1 object w/name player 1 choice rock
+#create player2 object w/name player 2 choice paper
+
 
