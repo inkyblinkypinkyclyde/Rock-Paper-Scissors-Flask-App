@@ -10,13 +10,64 @@
 </head>
 
 <body>
-    <ul>
-        <li>
-            <a href="/rps">RPS</a>
-        </li>
-    </ul>
+    <header>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="/rps">Home</a>
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Play URL mode</button>
+                <div class="dropdown-content">
+                    <a href="/rps/rock/scissors">
+                        P1 Rock | P2 Scissors
+                    </a>
+                    <a href="/rps/paper/scissors">
+                        Player 1 Rock / Player 2 Scissors
+                    </a>
+                    <a href="/rps/scissors/scissors">
+                        Player 1 Rock / Player 2 Scissors
+                    </a>
+                    <a href="/rps/rock/scissors">
+                        Player 1 Rock / Player 2 Scissors
+                    </a>
+                    <a href="/rps/paper/scissors">
+                        Player 1 Rock / Player 2 Scissors
+                    </a>
+                    <a href="/rps/scissors/scissors">
+                        Player 1 Rock / Player 2 Scissors
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Play LAN PVP Mode</button>
+                <div class="dropdown-content">
+                    <a href="/rps/LAN/player1">
+                        Player 1
+                    </a>
+                    <a href="/rps/LAN/player2">
+                        Player 2
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="/rps/pve">Play RPS PVE Mode</a>
+                </button>
+            </div>
+        </nav>
+
+
+    </header>
     <hr>
     {% block content %} {% endblock %}
+    <footer>
+        <section>
+            Rock Paper Scissors is powered by Flask!
+            css is shamelessly stolen from w3Schools
+        </section>
+    </footer>
 </body>
 
 </html>
