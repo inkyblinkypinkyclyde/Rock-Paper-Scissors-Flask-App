@@ -48,6 +48,25 @@ def play_game_URL_input(player1, player2):
         else:
             return "Player two wins! Scissors cut paper."
 
+def play_game_LAN_input(player1LAN, player2LAN):
+    if player1LAN.choice == player2LAN.choice:
+        return "It's a draw, you chose the same thing."
+    elif player1LAN.choice == "rock":
+        if player2LAN.choice == "scissors":
+            return "Player one wins! Rock crushes scissors."
+        else: 
+            return "Player two wins! Paper wraps rock."
+    elif player1LAN.choice == "scissors":
+        if player2LAN.choice == "paper":
+            return "Player one wins! Scissors wrap paper."
+        else:
+            return "Player two wins! Rock crushes scissors."
+    elif player1LAN.choice == "paper":
+        if player2LAN.choice == "rock":
+            return "Player one wins! Paper wraps rock."
+        else:
+            return "Player two wins! Scissors cut paper."
+
 def play_game_select_input(player1_choice, player2_choice):
     if player1_choice == player2_choice:
         return "It's a draw, you chose the same thing."
@@ -73,11 +92,11 @@ def play_game_select_input(player1_choice, player2_choice):
         else:
             return "something went wrong3. You shouldn't see this string"
 
-def set_played_to_player1():
-    player1LAN.has_played = True
+# def set_played_to_player1():
+#     player1LAN.has_played = True
 
-def set_played_to_player2():
-    player2LAN.has_played = True
+# def set_played_to_player2():
+#     player2LAN.has_played = True
 
 
 
