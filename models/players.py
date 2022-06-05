@@ -91,19 +91,3 @@ def play_game_select_input(player1_choice, player2_choice):
             return "Player two wins! Scissors cut paper."
         else:
             return "something went wrong3. You shouldn't see this string"
-
-# def set_played_to_player1():
-#     player1LAN.has_played = True
-
-# def set_played_to_player2():
-#     player2LAN.has_played = True
-
-
-
-# def play_PVP_LAN(player1_LAN, player2_LAN):
-#     if player1_has_played and player2_has_played:
-#         play_game_select_input(player1_LAN, player2_LAN)
-
-
-def play_rps():
-    pass

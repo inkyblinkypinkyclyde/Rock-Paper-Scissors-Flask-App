@@ -57,6 +57,7 @@ def play_LAN1():
     player1LAN.choice = request.form['player1_choice']
     if player2LAN.has_played == True:
         outcome = play_game_LAN_input(player1LAN, player2LAN)
+        player1LAN.has_played = False
         return render_template('pvp_LAN.html', title= "player1 - LAN", player = "player1", outcome = outcome)
     else:
         return render_template('pvp_LAN.html', title= "player1 - LAN", player = "player1", outcome = "please wait")
@@ -71,6 +72,7 @@ def play_LAN2():
     player2LAN.choice = request.form['player2_choice']
     if player1LAN.has_played == True:
         outcome = play_game_URL_input(player1LAN, player2LAN)
+        player2LAN.has_played = False
         return render_template('pvp_LAN.html', title= "player2 - LAN", player = "player2", outcome = outcome)
     else:
         return render_template('pvp_LAN.html', title= "player2 - LAN", player = "player2", outcome = "please wait")
