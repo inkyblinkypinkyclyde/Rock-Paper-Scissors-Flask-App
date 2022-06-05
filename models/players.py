@@ -2,14 +2,13 @@ from models.player import Player
 # from player import Player
 import random
 
-player1 = Player("John", "")
-player2 = Player("Jarrod", "")
-player3 = Player("Stan", "")
 
-player_list = [player1, player2, player3]
+
+player1LAN = Player("Alice", "", False)
+player2LAN = Player("Bob", "", False)
+results_list = []
 
 possible_actions = ["rock", "paper", "scissors"]
-
 def play_game_pve(choice):
     computer_choice = random.choice(possible_actions)
     if computer_choice == choice:
@@ -73,3 +72,19 @@ def play_game_select_input(player1_choice, player2_choice):
             return "Player two wins! Scissors cut paper."
         else:
             return "something went wrong3. You shouldn't see this string"
+
+def set_played_to_player1():
+    player1LAN.has_played = True
+
+def set_played_to_player2():
+    player2LAN.has_played = True
+
+
+
+# def play_PVP_LAN(player1_LAN, player2_LAN):
+#     if player1_has_played and player2_has_played:
+#         play_game_select_input(player1_LAN, player2_LAN)
+
+
+def play_rps():
+    pass

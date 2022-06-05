@@ -9,9 +9,28 @@
         </select>
         <input type="submit" value="Submit">
     </form>
+    <form action="/rps/pve/clear" methods="post">
+        <input type="submit" Value="Clear">
+    </form>
 </section>
 
 <section>
-    {{ outcome }}
+    <h3>The outcome was...</h3>
+    <h2>{{ outcome }}</h2>
+</section>
+<section>
+    <table>
+        <tr>
+            <th>
+                <h3>Results</h3>
+            </th>
+        </tr>
+        {%for result in results_list%}
+        <tr>
+            <td>{{result}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
 </section>
 {% endblock %}
